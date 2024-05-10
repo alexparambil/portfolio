@@ -1,0 +1,111 @@
+body {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+nav a {
+    text-decoration: none;
+    color: #000000;
+    margin: 0 10px;
+}
+nav {
+        position: absolute; 
+        top: 0;
+        right: 0;
+        padding: 10px 20px;
+}
+
+nav a:hover {
+            text-decoration: underline;
+    }
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-name {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.project-tagline {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+}
+
+.main-content {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+img {
+    width: 100%; /* Make images fill their container */
+    max-width: 400px; /* Set a maximum width for the images */
+    height: auto;
+    display: block; /* Ensure images don't have extra space underneath */
+    margin: 0 auto 15px; /* Center images horizontally and add some bottom margin */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    color: #777;
+}
+
+ol {
+    margin-bottom: 15px;
+}
+
+
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    img {
+        max-width: calc(50% - 10px); /* Set image width to 50% of container minus margin */
+        margin-right: 20px; /* Add margin between images */
+        float: left; /* Float images to the left */
+    }
+
+    img:nth-child(2n) {
+        margin-right: 0; /* Remove margin from the second image in each row */
+    }
+
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+iframe {
+    width: 560px; /* Adjust the width as needed */
+    height: 315px; /* Adjust the height as needed */
+    border: none; /* Remove border */
+    
+}
