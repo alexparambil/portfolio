@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Alex Varghese</title>
+    <link rel="stylesheet" href="pagestyle.css">
+    <style>
+        nav a {
+            text-decoration: none;
+            color: #000000;
+            margin: 0 10px;
+        }
+        nav {
+                position: absolute; 
+                top: 0;
+                right: 0;
+                padding: 10px 20px;
+        }
+
+        nav a:hover {
+                    text-decoration: underline;
+            }
+        body {
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(101, 101, 101);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: #ffffff;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(67, 67, 67, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: #333333;
+        }
+        
+        .square:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html"><b>Home</b></a>
+        <a href="about.html"><b>About Me</b></a>
+        <a href="work.html"><b>Projects</b></a>
+        <a href="achievements.html"><b>Achievements</b></a>
+    </nav>
+
+    <!-- Added anchor tags around the squares -->
+    <a href=" https://alexparambil.github.io/myacademicprojects/" class="square"><b>Accademic 1</b></a>
+    <a href="#" class="square"><b>+</b></a>
+</body>
+</html>
