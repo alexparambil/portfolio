@@ -1,101 +1,148 @@
 /* Reset some basic elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    font-family: Arial, sans-serif;
-    background-color: rgb(255, 255, 255);
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #010d1e;
-    color: #ffffff;
-    padding: 10px;
-    text-align: right;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: inline-block;
-  }
-  
-  nav a:hover {
-    background: #124550;
-  }
-  .square-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-  }
-  
-  .square {
-    width: 200px;
-    height: 200px;
-    background-color: #124550;
-    margin: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(67, 67, 67, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-    color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  padding: 20px;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #010d1e;
+  color: #ffffff;
+  padding: 10px;
+  text-align: right;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+nav a:hover {
+  background: #124550;
+}
+
+.square-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  background-color: #124550;
+  margin: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(67, 67, 67, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .square:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-  
-  @media (max-width: 767px) {
-    .square {
-      width: 150px;
-      height: 150px;
-    }
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  body {
+    padding: 10px;
+    flex-direction: column;
   }
-  
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .square {
-      width: 175px;
-      height: 175px;
-    }
+
+  nav {
+    position: fixed; /* Ensure nav is at the extreme top */
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #010d1e;
+    text-align: center;
+    padding: 5px;
   }
-  
-  @media (min-width: 1024px) {
-    .square {
-      width: 200px;
-      height: 200px;
-    }
-  
-    nav a {
-      margin: 0 15px;
-    }
+
+  nav a {
+    padding: 5px 10px;
+    display: block;
+    margin: 5px 0;
   }
-  
+
+  .square-container {
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 60px; /* Add top margin to avoid overlap with fixed nav */
+  }
+
+  .square {
+    width: 150px;
+    height: 150px;
+    margin: 5px 0;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding: 15px;
+  }
+
+  nav a {
+    padding: 8px 16px;
+    margin: 0 5px;
+  }
+
+  .square {
+    width: 175px;
+    height: 175px;
+    margin: 10px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  body {
+    padding: 20px;
+  }
+
+  nav a {
+    padding: 10px 20px;
+    margin: 0 15px;
+  }
+
+  .square {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+  }
+}
