@@ -28,6 +28,7 @@
             top: 0;
             right: 0;
             padding: 10px 20px;
+            display: none; /* Hidden by default for mobile view */
         }
 
         nav a {
@@ -84,76 +85,86 @@
         }
 
         .icon {
-            display: inline-block;
-            margin-left: 10px;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%; /* Makes the icon circular */
+                display: inline-block;
+                margin-left: 10px;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%; /* Makes the icon circular */
         }
 
-        /* Sliding Menu Styles for Mobile */
-        .menu-btn {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-            color: #fff;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            z-index: 1001;
-        }
-
-        .side-menu {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1001;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .side-menu a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #fff;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .side-menu a:hover {
-            color: #00ff00;
-        }
-
-        .side-menu .close-btn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        /* Media Queries for Mobile View */
-        @media (max-width: 767px) {
+        @media (min-width: 768px) {
             .menu-btn {
-                display: block;
-            }
-
-            nav {
                 display: none;
             }
 
-            section.header {
-                padding-top: 80px; /* Ensure header is visible */
+            nav {
+                display: block; /* Display for desktop view */
+            }
+
+            .side-menu {
+                display: none; /* Hide side menu for desktop view */
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .menu-btn {
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+                color: #fff;
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                z-index: 1001;
+            }
+
+            .side-menu {
+                display: none;
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1001;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+
+            .side-menu a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #fff;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .side-menu a:hover {
+                color: #00ff00;
+            }
+
+            .side-menu .close-btn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
             }
         }
     </style>
 </head>
 <body>
+    <nav >
+        <a href="index.html"><b>Home</b></a>
+        <a href="about.html"><b>About Me</b></a>
+        <a href="work.html"><b>Projects</b></a>
+        <a href="achievements.html"><b>Achievements</b></a>
+        <a href="assets/Alex_Varghese_Resume.pdf" download><b>Resume</b></a>
+    </nav>
+
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
     <nav class="side-menu" id="side-menu">
         <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
@@ -163,16 +174,12 @@
         <a href="achievements.html"><b>Achievements</b></a>
         <a href="assets/Alex_Varghese_Resume.pdf" download><b>Resume</b></a>
     </nav>
-    <nav>
-        <a href="index.html"><b>Home</b></a>
-        <a href="about.html"><b>About Me</b></a>
-        <a href="work.html"><b>Projects</b></a>
-        <a href="achievements.html"><b>Achievements</b></a>
-        <a href="assets/Alex_Varghese_Resume.pdf" download><b>Resume</b></a>
-    </nav>
+ 
     <section class="header">
         <h1>About</h1>
     </section>
+   
+
     <div class="container">
         <h3>Results-driven professional with a winning track record, I excel in leading high-pressure projects, like the state-level 36-hour hackathon where I led a 5-member team to victory. Specializing in RPA and full-stack development, I bring a unique blend of leadership, problem-solving, and technical skills. My expertise includes designing, implementing, and automating processes using RPA tools and Python. I have a proven ability to collaborate with business clients, develop automation processes, and provide unwavering support during UAT. My experience includes automating processes for international media production houses and airline companies, showcasing a robust skill set in Python, RPA, Textract, SQL, XML parsing, document processing, and Selenium automation. Let's innovate and automate together!</h3>
         <a href="https://www.linkedin.com/in/alexvarghese013/">

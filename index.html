@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="pagestyle.css">
     <style>
         /* Common styles */
-        body{
+        body {
             background-color: black;
             background-size: cover;
             background-repeat: no-repeat;
@@ -17,83 +17,37 @@
             margin: 0;
             padding: 0;
         }
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 10px;
+        
+      
+        h1 {
+            font-size: xx-large;
         }
-        h1{
-            font-size:xx-large;
-        }
-        h3{
-            font-size:xx-large;
+        h3 {
+            font-size: xx-large;
             color: #bba9a9;
         }
-        h4{
-            font-size:small;
+        h4 {
+            font-size: small;
             color: #bba9a9;
         }
-        h5{
+        h5 {
             font-family: 'Courier New', monospace;
-            font-size:small;
+            font-size: small;
             color: #00fe7b;
         }
 
         /* Mobile view */
         @media (max-width: 767px) {
-            .menu-btn {
-                display: block;
-                position: fixed;
-                top: 10px;
-                left: 10px;
-                z-index: 1;
-                color: #fff;
-                cursor: pointer;
-                font-size: 24px;
-            }
-            .side-menu {
-                height: 100%;
-                width: 0;
-                position: fixed;
-                top: 0;
-                left: 0;
-                background-color: #333;
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 60px;
-            }
-            .side-menu a {
-                padding: 10px 15px;
-                text-decoration: none;
-                font-size: 25px;
-                color: #fff;
-                display: block;
-                transition: 0.3s;
-            }
-            .side-menu a:hover {
-                background-color: #555;
-            }
+          
             .container {
                 padding-top: 60px; /* Push content down to make space for fixed header */
             }
-            nav {
-                display: none; /* Hide regular nav on mobile */
-            }
+            
         }
 
         /* Tablet and desktop view */
         @media (min-width: 768px) {
-            .menu-btn,
-            .side-menu {
-                display: none; /* Hide menu button and side menu on tablet and desktop */
-            }
-            nav {
-                display: block;
-                position: absolute; 
-                top: 0;
-                right: 0;
-                padding: 10px 20px;
-            }
+           
             .container {
                 max-width: 800px;
                 margin: 0 auto;
@@ -105,18 +59,7 @@
     </style>
 </head>
 <body>
-    <!-- Mobile menu button -->
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <!-- Side menu -->
-    <nav class="side-menu" id="side-menu">
-        <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
-        <a href="index.html"><b>Home</b></a>
-        <a href="about.html"><b>About Me</b></a>
-        <a href="work.html"><b>Projects</b></a>
-        <a href="achievements.html"><b>Achievements</b></a>
-        <a href="assets\Alex_Varghese_Resume.pdf" download><b>Resume</b></a>
-    </nav>
-    <!-- Main content -->
+    
     <div class="container">
         <h5>hey, I'm </h5>
         <h1>Alex Varghese.</h1>
@@ -125,15 +68,6 @@
         <button onclick="window.location.href='about.html'">Ready to explore?</button>
     </div>
 
-    <script>
-        function toggleMenu() {
-            const sideMenu = document.getElementById("side-menu");
-            if (sideMenu.style.width === "250px") {
-                sideMenu.style.width = "0";
-            } else {
-                sideMenu.style.width = "250px";
-            }
-        }
-    </script>
+   
 </body>
 </html>
