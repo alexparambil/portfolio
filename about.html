@@ -53,6 +53,8 @@
             text-align: justify; /* Justify content */
             font-family: 'Courier New', monospace;
             font-size: small;
+            position: relative; /* Ensure it's a stacking context */
+            z-index: 1; /* Set z-index to 1 */
         }
 
         h1, h3 {
@@ -85,11 +87,11 @@
         }
 
         .icon {
-                display: inline-block;
-                margin-left: 10px;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%; /* Makes the icon circular */
+            display: inline-block;
+            margin-left: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%; /* Makes the icon circular */
         }
 
         @media (min-width: 768px) {
@@ -107,7 +109,6 @@
         }
 
         @media (max-width: 767px) {
-
             .menu-btn {
                 display: block;
                 font-size: 30px;
@@ -120,11 +121,10 @@
             }
 
             .side-menu {
-                display: none;
                 height: 100%;
                 width: 0;
                 position: fixed;
-                z-index: 1001;
+                z-index: 1002; /* Set a higher z-index than the container */
                 top: 0;
                 left: 0;
                 background-color: rgba(0, 0, 0, 0.9);
@@ -137,13 +137,13 @@
                 padding: 8px 8px 8px 32px;
                 text-decoration: none;
                 font-size: 25px;
-                color: #fff;
+                color: #00fe7b;
                 display: block;
                 transition: 0.3s;
             }
 
             .side-menu a:hover {
-                color: #00ff00;
+                color: #fefffe;
             }
 
             .side-menu .close-btn {
@@ -152,12 +152,13 @@
                 right: 25px;
                 font-size: 36px;
                 margin-left: 50px;
+                color: #fff;
             }
         }
     </style>
 </head>
 <body>
-    <nav >
+    <nav>
         <a href="index.html"><b>Home</b></a>
         <a href="about.html"><b>About Me</b></a>
         <a href="work.html"><b>Projects</b></a>
@@ -165,20 +166,19 @@
         <a href="assets/Alex_Varghese_Resume.pdf" download><b>Resume</b></a>
     </nav>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <nav class="side-menu" id="side-menu">
-        <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <div class="menu-btn" onclick="openNav()">☰</div>
+    <div class="side-menu" id="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
         <a href="index.html"><b>Home</b></a>
         <a href="about.html"><b>About Me</b></a>
         <a href="work.html"><b>Projects</b></a>
         <a href="achievements.html"><b>Achievements</b></a>
         <a href="assets/Alex_Varghese_Resume.pdf" download><b>Resume</b></a>
-    </nav>
- 
+    </div>
+
     <section class="header">
         <h1>About</h1>
     </section>
-   
 
     <div class="container">
         <h3>Results-driven professional with a winning track record, I excel in leading high-pressure projects, like the state-level 36-hour hackathon where I led a 5-member team to victory. Specializing in RPA and full-stack development, I bring a unique blend of leadership, problem-solving, and technical skills. My expertise includes designing, implementing, and automating processes using RPA tools and Python. I have a proven ability to collaborate with business clients, develop automation processes, and provide unwavering support during UAT. My experience includes automating processes for international media production houses and airline companies, showcasing a robust skill set in Python, RPA, Textract, SQL, XML parsing, document processing, and Selenium automation. Let's innovate and automate together!</h3>
@@ -192,13 +192,12 @@
     </div>
 
     <script>
-        function toggleMenu() {
-            const sideMenu = document.getElementById("side-menu");
-            if (sideMenu.style.width === "250px") {
-                sideMenu.style.width = "0";
-            } else {
-                sideMenu.style.width = "250px";
-            }
+        function openNav() {
+            document.getElementById("side-menu").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("side-menu").style.width = "0";
         }
     </script>
 </body>

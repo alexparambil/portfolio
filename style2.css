@@ -75,57 +75,131 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Mobile Styles */
+/* Mobile and Tablet Styles */
 @media (max-width: 767px) {
-  body {
-    padding: 10px;
-    flex-direction: column;
-  }
-
-  nav {
-    position: fixed; /* Ensure nav is at the extreme top */
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: #010d1e;
-    text-align: center;
-    padding: 5px;
-  }
-
-  nav a {
-    padding: 5px 10px;
+  .menu-btn {
     display: block;
-    margin: 5px 0;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
   }
 
-  .square-container {
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 60px; /* Add top margin to avoid overlap with fixed nav */
+  .side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1002; /* Set a higher z-index than the container */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #00fe7b;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .side-menu a:hover {
+    color: #fefffe;
+  }
+
+  .side-menu .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #fff;
+  }
+
+  /* Adjustments for mobile view */
+  nav {
+    display: none; /* Hide top navigation on mobile */
   }
 
   .square {
     width: 150px;
     height: 150px;
-    margin: 5px 0;
+    margin: 5px;
+  }
+
+  h1 {
+    font-size: large;
   }
 }
 
 /* Tablet Styles */
 @media (min-width: 768px) and (max-width: 1023px) {
-  body {
-    padding: 15px;
+  .menu-btn {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
   }
 
-  nav a {
-    padding: 8px 16px;
-    margin: 0 5px;
+  .side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1002; /* Set a higher z-index than the container */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #00fe7b;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .side-menu a:hover {
+    color: #fefffe;
+  }
+
+  .side-menu .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #fff;
+  }
+
+  /* Adjustments for tablet view */
+  nav {
+    display: none; /* Hide top navigation on tablet */
   }
 
   .square {
     width: 175px;
     height: 175px;
-    margin: 10px;
+    margin: 7px;
+  }
+
+  h1 {
+    font-size: x-large;
   }
 }
 
@@ -144,5 +218,13 @@ nav a:hover {
     width: 200px;
     height: 200px;
     margin: 10px;
+  }
+
+  .menu-btn {
+    display: none; /* Hide menu button on desktop */
+  }
+
+  .side-menu {
+    display: none; /* Hide side menu on desktop */
   }
 }

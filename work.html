@@ -5,14 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project - Alex Varghese</title>
     <link rel="stylesheet" href="style2.css">
-
-<style>
-    h1{
+    <style>
+        h1 {
             font-family: Arial, sans-serif;
-            font-size:xx-large;
+            font-size: xx-large;
             color: #000000;
         }
-</style>
+
+        @media (min-width: 768px) {
+            .menu-btn {
+                display: none;
+            }
+
+            nav {
+                display: block; /* Display for desktop view */
+            }
+
+            .side-menu {
+                display: none; /* Hide side menu for desktop view */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .menu-btn {
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+                color: #000;
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                z-index: 1001;
+            }
+
+            .side-menu {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1002; /* Set a higher z-index than the container */
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+
+            .side-menu a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #fff;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .side-menu a:hover {
+                color: #00ff00;
+            }
+
+            .side-menu .close-btn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+                color: #fff;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -21,14 +82,33 @@
         <a href="work.html"><b>Projects</b></a>
         <a href="achievements.html"><b>Achievements</b></a>
     </nav>
-    <h1>Accademic</h1>
-    <div class="square-container">
-        <a href=" https://alexparambil.github.io/myacademicprojects/" class="square" title="Click to View my academic projects"><b>Front End - 1</b></a>
-        
+
+    <div class="menu-btn" onclick="openNav()">☰</div>
+    <div class="side-menu" id="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="index.html"><b>Home</b></a>
+        <a href="about.html"><b>About Me</b></a>
+        <a href="work.html"><b>Projects</b></a>
+        <a href="achievements.html"><b>Achievements</b></a>
     </div>
-    <h1>Personal</h1>
+
+    <h1>Academic</h1>
+    <div class="square-container">
+        <a href="https://alexparambil.github.io/myacademicprojects/" class="square" title="Click to View my academic projects"><b>Front End - 1</b></a>
+    </div>
+    <h1>Hackathon</h1>
     <div class="square-container">
         <a href="vaiga.html" class="square"><b>Vaiga-Agri-Hack 2021</b></a>
     </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("side-menu").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("side-menu").style.width = "0";
+        }
+    </script>
 </body>
 </html>

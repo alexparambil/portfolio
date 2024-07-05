@@ -1,194 +1,301 @@
 /* Reset some basic elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #f4f4f4;
-    
-    
-  }
-  
-  nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #1e545c;
-    color: #ffffff;
-    padding: 10px;
-    text-align: right;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: inline-block;
-  }
-  
-  nav a:hover {
-    background: #124550;
-  }
-  
-  .page-header {
-    text-align: center;
-    padding: 20px;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    margin-top: 50px; /* Adjust this value based on nav height */
-  }
-  
-  .page-header h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  .page-header h2 {
-    font-size: 1.2em;
-    color: #666;
-  }
-  
-  .main_content, .tech_content, .Team {
-    padding: 20px;
-    background: #fff;
-    margin: 20px auto;
-    max-width: 1200px;
-  }
-  
-  h1, h2, h3 {
-    margin-bottom: 20px;
-  }
-  
-  iframe {
-    width: 100%;
-    height: 250px; /* 50% of the previous height */
-    margin-bottom: 20px;
-    background: white; /* Ensure iframe background is transparent */
-  }
-  
-  figure {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  figure img {
-    width: 50%; /* 50% of the current width */
-    height: auto;
-  }
-  
-  figcaption {
-    font-style: italic;
-    color: #666;
-  }
-  
-  img {
-    display: block;
-    width: 50%; /* 50% of the current width */
-    height: auto;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  ol {
-    padding-left: 20px;
-    margin-bottom: 20px;
-  }
-  
-  #our-team {
-    text-align: center;
-  }
-  
-  @media (max-width: 600px) {
-    nav {
-        position: static;
-        text-align: center;
-    }
-    nav a {
-        display: block;
-        margin: 5px 0;
-    }
-    h1, h3 {
-        font-size: large;
-    }
-    h4, h5 {
-        font-size: smaller;
-    }
-    .container {
-        padding: 10px;
-    }
-    button {
-        width: 100%;
-        padding: 15px;
-        margin: 10px 0;
-        font-size: medium;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  
-  @media (min-width: 768px) {
-    nav {
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #1e545c;
+  color: #ffffff;
+  padding: 10px;
+  text-align: right;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+nav a:hover {
+  background: #124550;
+}
+
+.page-header {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  margin-top: 50px; /* Adjust this value based on nav height */
+}
+
+.page-header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.page-header h2 {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.main_content, .tech_content, .Team {
+  padding: 20px;
+  background: #fff;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px;
+}
+
+iframe {
+  width: 100%;
+  height: 250px; /* 50% of the previous height */
+  margin-bottom: 20px;
+  background: white; /* Ensure iframe background is transparent */
+}
+
+figure {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+figure img {
+  width: 50%; /* 50% of the current width */
+  height: auto;
+}
+
+figcaption {
+  font-style: italic;
+  color: #666;
+}
+
+img {
+  display: block;
+  width: 50%; /* 50% of the current width */
+  height: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+#our-team {
+  text-align: center;
+}
+
+/* Side Navigation Menu Styles */
+.menu-btn {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+}
+
+.side-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1002; /* Set a higher z-index than the container */
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.side-menu a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.side-menu a:hover {
+  background-color: #575757;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  color: #fff;
+}
+
+/* Mobile and Tablet Styles */
+@media (max-width: 600px) {
+  .menu-btn {
+      display: block;
+  }
+
+  nav {
+      display: none;
+  }
+
+  nav {
+      position: static;
+      text-align: center;
+  }
+
+  nav a {
+      display: block;
+      margin: 5px 0;
+  }
+
+  h1, h3 {
+      font-size: large;
+  }
+
+  h4, h5 {
+      font-size: smaller;
+  }
+
+  .container {
+      padding: 10px;
+  }
+
+  button {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: medium;
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
       display: flex;
       justify-content: flex-end; /* Ensure links align to the right */
-    }
-  
-    nav a {
+  }
+
+  nav a {
       padding: 10px 40px;
-    }
-  
-    .main_content, .tech_content, .Team {
+  }
+
+  .main_content, .tech_content, .Team {
       padding: 40px;
-    }
-  
-    h1 {
+  }
+
+  h1 {
       font-size: 2.5em;
-    }
-  
-    h2 {
+  }
+
+  h2 {
       font-size: 2em;
-    }
-  
-    h3 {
+  }
+
+  h3 {
       font-size: 1.5em;
-    }
-  
-    iframe {
+  }
+
+  iframe {
       height: 225px; /* 50% of the previous height */
-    }
-  
-    figure {
+  }
+
+  figure {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-  
-    figure img {
-      width: 50%; /* 50% of the current width */
-    }
   }
-  
-  @media (min-width: 1024px) {
-    nav {
+
+  figure img {
+      width: 50%; /* 50% of the current width */
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
       justify-content: flex-end; /* Ensure links align to the right */
-    }
-  
-    .main_content, .tech_content, .Team {
-      padding: 60px;
-    }
-  
-    iframe {
-      height: 250px; /* 50% of the previous height */
-    }
-  
-    figure img {
-      width: 50%; /* 50% of the current width */
-    }
   }
-  
+
+  .main_content, .tech_content, .Team {
+      padding: 60px;
+  }
+
+  iframe {
+      height: 250px; /* 50% of the previous height */
+  }
+
+  figure img {
+      width: 50%; /* 50% of the current width */
+  }
+}
+@media (max-width: 767px) {
+  .menu-btn {
+      display: block;
+      font-size: 30px;
+      cursor: pointer;
+      color: #000;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 1001;
+  }
+
+  .side-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1002; /* Set a higher z-index than the container */
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+  }
+
+  .side-menu a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+  }
+
+  .side-menu a:hover {
+      color: #00ff00;
+  }
+
+  .side-menu .close-btn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+      color: #fff;
+  }
+}
